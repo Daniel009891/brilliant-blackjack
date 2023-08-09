@@ -1,4 +1,8 @@
 import random
+import pyfiglet
+import time,sys
+
+
 
 def game_introduction():
     """
@@ -6,6 +10,26 @@ def game_introduction():
     Asks if the user would like to read game instructions
     or play game.
     """
-    print("game introduction")
+    print(pyfiglet.figlet_format("WELCOME TO\n BRILLIANT BLACKJACK"))
+    time.sleep(1)
+
+    name = typingInput("Welcome! please enter your name"  )
+    
+    
+
+def typingPrint(text):
+  for character in text:
+    sys.stdout.write(character)
+    sys.stdout.flush()
+    time.sleep(0.05)
+  
+def typingInput(text):
+  for character in text:
+    sys.stdout.write(character)
+    sys.stdout.flush()
+    time.sleep(0.05)
+  value = input()  
+  return value 
+    
 
 game_introduction()
