@@ -12,8 +12,20 @@ def game_introduction():
     """
     print(pyfiglet.figlet_format("WELCOME TO\n BRILLIANT BLACKJACK"))
     time.sleep(1)
+    while True:
+        name = typingInput("\nWelcome! please enter your name:\n").capitalize()
+        if (name != "Computer") and (name != ""):
+            print("\n")
+            typingPrint(f"Welcome {name}!")
+            break
 
-    name = typingInput("Welcome! please enter your name:")
+        elif name == "Computer":
+            typingPrint("\nSorry you cannot be the computer! please enter a valid name!\n")
+            print("\n")
+        
+        else: typingPrint("\nSorry you didnt input a name! please enter a valid name!\n")
+        print("\n")
+    
 
 
 def typingPrint(text):
