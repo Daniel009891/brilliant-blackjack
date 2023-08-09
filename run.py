@@ -1,7 +1,7 @@
 import random
 import pyfiglet
-import time,sys
-
+import time
+import sys
 
 
 def game_introduction():
@@ -13,23 +13,23 @@ def game_introduction():
     print(pyfiglet.figlet_format("WELCOME TO\n BRILLIANT BLACKJACK"))
     time.sleep(1)
 
-    name = typingInput("Welcome! please enter your name"  )
-    
-    
+    name = typingInput("Welcome! please enter your name:")
+
 
 def typingPrint(text):
-  for character in text:
-    sys.stdout.write(character)
-    sys.stdout.flush()
-    time.sleep(0.05)
-  
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+
+
 def typingInput(text):
-  for character in text:
-    sys.stdout.write(character)
-    sys.stdout.flush()
-    time.sleep(0.05)
-  value = input()  
-  return value 
-    
+    for character in text:
+        sys.stdout.write(character)
+        sys.stdout.flush()
+        time.sleep(0.05)
+    value = input()
+    return value
+
 
 game_introduction()
