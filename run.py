@@ -3,6 +3,10 @@ import pyfiglet
 import time
 import sys
 
+suits = ["Diamonds", "Clubs", "Hearts", "Spades"]
+cards = ["2","3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
+
 
 def game_introduction():
     """
