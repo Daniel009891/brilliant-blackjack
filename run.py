@@ -45,7 +45,7 @@ def game_introduction():
             typingPrint("I see.... you need a little help....here you go!")
             time.sleep(1)
             game_rules()
-            break
+            
 
         elif choices == "n":
             print("\n")
@@ -53,7 +53,11 @@ def game_introduction():
                         "like it! lets play!!!")
             time.sleep(1)
             start_game()
-            break
+            
+
+        elif choices == "":
+            typingPrint("Sorry you didnt make a selection. "
+                        "Please type Y for yes or N for no")
 
         else:
             typingPrint("\nSorry you can only select "
@@ -67,17 +71,46 @@ def game_rules():
     Displays the rules of the game for the user if selected
     on the game introduction.
     """
-    print(pyfiglet.figlet_format("BRILLIANT BLACKJACK RULES OF PLAY"))
+    print(pyfiglet.figlet_format("\nBRILLIANT BLACKJACK RULES OF PLAY"))
     print("\n")
     typingPrint("""\n
-    The aim of brilliant blackjack is to score more point than the computer,
-    without scoring more than 21.
+The aim of brilliant blackjack is to score more point than the computer,
+without scoring more than 21.
 
-    Point are awarded in conjunction to the number on the cards
-    dealt to both players.
+Point are awarded in conjunction to the number on the cards
+dealt to both players.
 
-    Picture cards (Jack, Queen and king) are worth 10 points each.
+Picture cards (Jack, Queen and king) are worth 10 points each.
+
+Aces are high (11 points) or low (1 point) depending on the total score.
+
+When the game starts, players are dealt 2 cards each from the shuffled
+pack of cards. You will only 'see' one of the computer's cards.
+
+If you have a score less than 21 points, you will have the option
+to either STICK with the cards you have or TWIST and receive another card.
+
+If you score 21 points with your first 2 cards, you score BLACKJACK and the 
+game continues.
+
+If you score more than 21 points, you will be BUST and the game continues.
+
+The computer will choose to 'TWIST' or 'STICK' - which finishes the game
     """)
+    options = typingInput("\nwould you like to start the game? "
+                          "Please select Y to play or N to exit:\n").lower()
+    if options == "n":
+        typingPrint("\nSorry to see you go!!")
+        print(pyfiglet.figlet_format("\nCome Back Soon"))
+        sys.exit()
+    elif options == "y":
+        print(pyfiglet.figlet_format("\nGame On!"))
+        start_game()
+    elif options == "":
+        typingPrint("\nSorry you didnt make a selection. "
+                    "Please type Y to start game or N to exit")
+    else:
+        typingPrint("Sorry you can only select Y to play or N to exit")
 
 
 def start_game():
