@@ -4,7 +4,8 @@ import time
 import sys
 
 suits = ["Diamonds", "Clubs", "Hearts", "Spades"]
-cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+cards = ["2", "3", "4", "5", "6", "7", "8", "9", "10",
+         "Jack", "Queen", "King", "Ace"]
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
 
 
@@ -26,37 +27,70 @@ def game_introduction():
             break
 
         elif name == "Computer":
-            typingPrint("\nSorry you cannot be the computer! please enter a valid name!\n")
+            typingPrint("\nSorry you cannot be the computer! "
+                        "please enter a valid name!\n")
             print("\n")
-        else: 
-            typingPrint("\nSorry you didn't input a name! please enter a valid name!\n")
+        else:
+            typingPrint("\nSorry you didn't input a name! "
+                        "please enter a valid name!\n")
         print("\n")
     # Game rules input
     time.sleep(1)
     while True:
         print("\n")
-        choices = typingInput("\nWould you like to read the rules of the game? (Type Y for yes and N for no):").lower()
+        choices = typingInput("\nWould you like to read the rules of the game?"
+                              "(Type Y for yes and N for no):").lower()
         if choices == "y":
             print("\n")
             typingPrint("I see.... you need a little help....here you go!")
             time.sleep(1)
             game_rules()
+            break
+
         elif choices == "n":
             print("\n")
-            typingPrint("You like to live dangerously.... I like it! lets play!!!")
+            typingPrint("You like to live dangerously.... I "
+                        "like it! lets play!!!")
             time.sleep(1)
             start_game()
-        elif choices == "":
-            typingPrint("\n Sorry no selection was made, please select Y for (yes) or N for (no), please try again!\n")
-            print("\n")
-            time.sleep(1)
+            break
+
         else:
-            typingPrint("\n Sorry you can only select Y for (yes) or N for (no), please try again!\n")
+            typingPrint("\nSorry you can only select "
+                        "Y for (yes) or N for (no), "
+                        "please try again!\n")
             print("\n")
+
+
+def game_rules():
+    """"
+    Displays the rules of the game for the user if selected
+    on the game introduction.
+    """
+    print(pyfiglet.figlet_format("BRILLIANT BLACKJACK RULES OF PLAY"))
+    print("\n")
+    typingPrint("""\n
+    The aim of brilliant blackjack is to score more point than the computer,
+    without scoring more than 21.
+
+    Point are awarded in conjunction to the number on the cards
+    dealt to both players.
+
+    Picture cards (Jack, Queen and king) are worth 10 points each.
+    """)
+
+
+def start_game():
+    """
+
+    """
+    print("game started")
 
 
 def typingPrint(text):
-    # code inspired by https://www.101computing.net/python-typing-text-effect/
+    """
+    code inspired by https://www.101computing.net/python-typing-text-effect/
+    """
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
@@ -64,7 +98,9 @@ def typingPrint(text):
 
 
 def typingInput(text):
-    # code inspired by https://www.101computing.net/python-typing-text-effect/
+    """
+    code inspired by https://www.101computing.net/python-typing-text-effect/
+    """
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
