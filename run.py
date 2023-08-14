@@ -158,7 +158,23 @@ def create_player_cards(pack):
     dictionary, adds them to a new list and converts
     new list to dictionary.
     """
-    
+    player_cards = []
+    while len(player_cards) < 2:
+        player_cards.append(pack.popitem())
+    player_cards = dict(player_cards)
+    player_score = sum(player_cards.values())
+    player_score = player_ace_values(player_cards)
+    typingPrint("Your cards are: ")
+    time.sleep(1)
+    print("\n")
+    for keys, value in player_cards.items():
+        print(keys)
+    time.sleep(1)
+    your_score = ("Your score is: "
+                  f"{player_score}")
+    typingPrint(f"{your_score}")
+    return player_cards
+
 
 def start_game():
     """
@@ -169,7 +185,7 @@ def start_game():
     pack = create_pack_of_cards()
     computer_cards = create_computer_cards(pack)
     player_cards = create_player_cards(pack)
-    
+
 
 def typingPrint(text):
     """
