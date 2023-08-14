@@ -46,7 +46,6 @@ def game_introduction():
             time.sleep(1)
             game_rules()
             
-
         elif choices == "n":
             print("\n")
             typingPrint("You like to live dangerously.... I "
@@ -54,7 +53,6 @@ def game_introduction():
             time.sleep(1)
             start_game()
             
-
         elif choices == "":
             typingPrint("Sorry you didnt make a selection. "
                         "Please type Y for yes or N for no")
@@ -141,7 +139,17 @@ def create_computer_cards(pack):
     prints the first card, converts list to
     dictionary and sums values to get score
     """
-    print("computer cards created")
+    computer_cards = []
+    while len(computer_cards) < 2:
+        computer_cards.append(pack.popitem())
+        typingPrint("Dealing the computers cards....")
+        time.sleep(1)
+        typingPrint("The computers first card is: ")
+        print("\n")
+        print(f"{computer_cards[0][0]}")
+        time.sleep(1)
+        computer_cards = dict(computer_cards)
+        return computer_cards
 
 
 def create_player_cards(pack):
@@ -150,9 +158,7 @@ def create_player_cards(pack):
     dictionary, adds them to a new list and converts
     new list to dictionary.
     """
-    print("player cards created")
-
-
+    
 
 def start_game():
     """
@@ -165,10 +171,10 @@ def start_game():
     player_cards = create_player_cards(pack)
     
 
-
 def typingPrint(text):
     """
-    Not my code, taken from https://www.101computing.net/python-typing-text-effect/
+    Not my code, taken from
+    https://www.101computing.net/python-typing-text-effect/
     """
     for character in text:
         sys.stdout.write(character)
@@ -178,7 +184,8 @@ def typingPrint(text):
 
 def typingInput(text):
     """
-    Not my code, taken from https://www.101computing.net/python-typing-text-effect/
+    Not my code, taken from
+    https://www.101computing.net/python-typing-text-effect/
     """
     for character in text:
         sys.stdout.write(character)
