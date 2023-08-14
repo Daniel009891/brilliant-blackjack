@@ -135,7 +135,23 @@ def create_pack_of_cards():
     
 
 def create_computer_cards(pack):
-    print("computer hand created")
+    """
+    Selects 2 cards for the computer from the shuffled
+    pack and adds these to a new list.
+    prints the first card, converts list to
+    dictionary and sums values to get score
+    """
+    print("computer cards created")
+
+
+def create_player_cards(pack):
+    """
+    Removes 2 cards for the player from the shuffled
+    dictionary, adds them to a new list and converts
+    new list to dictionary.
+    """
+    print("player cards created")
+
 
 
 def start_game():
@@ -146,6 +162,7 @@ def start_game():
     """
     pack = create_pack_of_cards()
     computer_cards = create_computer_cards(pack)
+    player_cards = create_player_cards(pack)
     
 
 
