@@ -113,16 +113,33 @@ The computer will choose to 'TWIST' or 'STICK' - which finishes the game
         typingPrint("Sorry you can only select Y to play or N to exit")
 
 
+def create_pack_of_cards():
+    """
+    Creates an ordered list (pack) as strings, converts
+    list to dictionary pack of cards, to add card values to card keys
+    converts dictionary back to a list (pack), shuffles the pack and 
+    converts the shuffled list to shuffled dictionary.
+    """
+    pack = []
+    for suit in suits:
+        for card in cards:
+            pack.append(card + "of" + suit)
+    pack_of_cards = dict(zip(pack, values*4))
+    pack = list(pack_of_cards.items())
+    typingPrint("Shuffling the deck.....\n")
+
 def start_game():
     """
-
+    Starts the game and cycles through the associated
+    functions before asking the player if they'd like 
+    to play again.
     """
-    print("game started")
+    create_pack_of_cards()
 
 
 def typingPrint(text):
     """
-    code inspired by https://www.101computing.net/python-typing-text-effect/
+    Not my code, taken from https://www.101computing.net/python-typing-text-effect/
     """
     for character in text:
         sys.stdout.write(character)
@@ -132,7 +149,7 @@ def typingPrint(text):
 
 def typingInput(text):
     """
-    code inspired by https://www.101computing.net/python-typing-text-effect/
+    Not my code, taken from https://www.101computing.net/python-typing-text-effect/
     """
     for character in text:
         sys.stdout.write(character)
