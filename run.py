@@ -126,7 +126,13 @@ def create_pack_of_cards():
             pack.append(card + "of" + suit)
     pack_of_cards = dict(zip(pack, values*4))
     pack = list(pack_of_cards.items())
+    print("\n")
     typingPrint("Shuffling the deck.....\n")
+    time.sleep(1)
+    random.shuffle(pack)
+    pack = dict(pack)
+    return pack
+    
 
 def start_game():
     """
@@ -135,6 +141,7 @@ def start_game():
     to play again.
     """
     create_pack_of_cards()
+    print("pack returned")
 
 
 def typingPrint(text):
