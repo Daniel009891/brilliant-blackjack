@@ -134,14 +134,19 @@ def create_pack_of_cards():
     return pack
     
 
+def create_computer_cards(pack):
+    print("computer hand created")
+
+
 def start_game():
     """
     Starts the game and cycles through the associated
     functions before asking the player if they'd like 
     to play again.
     """
-    create_pack_of_cards()
-    print("pack returned")
+    pack = create_pack_of_cards()
+    computer_cards = create_computer_cards(pack)
+    
 
 
 def typingPrint(text):
