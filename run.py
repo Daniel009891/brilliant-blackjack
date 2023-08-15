@@ -199,6 +199,28 @@ def player_ace_values(player_cards):
     return player_score
 
 
+def computer_ace_values():
+    """
+    Analizes the computers cards for aces if score is
+    greater than 21 and changes one ace value from
+    high(11) to low(1) whilever the score remains
+    higher than 21.
+    """
+    computer_score = sum(computer_cards.values())
+    if computer_score > 21:
+            for key, value in computer_score.items():
+                if "Ace" in key and value == 11:
+                    update_value = {key: 1}
+                    computer_score.update(updated_value)
+                    update_score = sum(computer_cards.values())
+                    if update_score > 21:
+                        continue
+                    else:
+                        computer_score = update_score
+                        break
+    return computer_score
+
+
 def start_game():
     """
     Starts the game and cycles through the associated
