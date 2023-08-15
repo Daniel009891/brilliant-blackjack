@@ -13,8 +13,8 @@ def game_introduction():
     """
     Displays a welcome message for the user.
     Asks user to input a name.
-    Asks if the user would like to read game instructions
-    or play game.
+    If name is valid, function will call the game
+    rules options function.
     """
     # player name input
     print(pyfiglet.figlet_format("WELCOME TO\n BRILLIANT BLACKJACK"))
@@ -24,7 +24,7 @@ def game_introduction():
         if (name != "Computer") and (name != ""):
             print("\n")
             print(pyfiglet.figlet_format(f"Welcome {name}!\n"))
-            break
+            game_rules_options()
 
         elif name == "Computer":
             typingPrint("\nSorry you cannot be the computer! "
@@ -33,11 +33,16 @@ def game_introduction():
         else:
             typingPrint("\nSorry you didn't input a name! "
                         "please enter a valid name!\n")
-        print("\n")
-    # Game rules input
-    time.sleep(1)
+    print("\n")
+
+
+def game_rules_options():
+    """
+    Gives the user the option to read the rules
+    or play the game without.
+    """
+
     while True:
-        print("\n")
         choices = typingInput("\nWould you like to read the rules of the game?"
                               "(Type Y for yes and N for no):\n").lower()
         if choices == "y":
@@ -51,10 +56,7 @@ def game_introduction():
                         "like it! lets play!!!")
             print(pyfiglet.figlet_format("\nGame On!"))
             time.sleep(1)
-            start_game()
-        elif choices == "":
-            typingPrint("Sorry you didnt make a selection. "
-                        "Please type Y for yes or N for no")
+            start_game()    
         else:
             typingPrint("\nSorry you can only select "
                         "Y for (yes) or N for (no), "
@@ -65,7 +67,7 @@ def game_introduction():
 def game_rules():
     """"
     Displays the rules of the game for the user if selected
-    on the game introduction.
+    on the game rules options function.
     """
     print(pyfiglet.figlet_format("\nBRILLIANT BLACKJACK RULES OF PLAY"))
     print("\n")
@@ -93,20 +95,20 @@ If you score more than 21 points, you will be BUST and the game continues.
 
 The computer will choose to 'TWIST' or 'STICK' - which finishes the game
     """)
-    options = typingInput("\nwould you like to start the game? "
-                          "Please select Y to play or N to exit:\n").lower()
-    if options == "n":
-        typingPrint("\nSorry to see you go!!")
-        print(pyfiglet.figlet_format("\nCome Back Soon"))
-        sys.exit()
-    elif options == "y":
-        print(pyfiglet.figlet_format("\nGame On!"))
-        start_game()
-    elif options == "":
-        typingPrint("\nSorry you didnt make a selection. "
-                    "Please type Y to start game or N to exit")
-    else:
-        typingPrint("Sorry you can only select Y to play or N to exit")
+    while True:
+        options = typingInput("\nwould you like to start the game? "
+                              "Please select Y to play or No"
+                              "to exit:\n").lower()
+        if options == "n":
+            typingPrint("\nSorry to see you go!!")
+            print(pyfiglet.figlet_format("\nCome Back Soon"))
+            sys.exit()
+        elif options == "y":
+            print(pyfiglet.figlet_format("\nGame On!"))
+            start_game()
+
+        else:
+            typingPrint("Sorry you can only select Y to play or N to exit")
 
 
 def create_pack_of_cards():
@@ -173,6 +175,23 @@ def create_player_cards(pack):
                   f"{player_score}")
     typingPrint(f"{your_score}")
     return player_cards
+
+
+def player_ace_values(player_cards):
+    """
+    Analizes the players cards for aces if score is
+    greater than 21 and changes one ace value from
+    high(11) to low(1) whilever the score remains
+    higher than 21.
+    """
+    player_score = sum(player_cards.values())
+    if player_cards > 21:
+        for key, value in player_cards.items():
+            if "Ace" in key and value == 11:
+                update_value = {key: 1}
+                player_cards.update(updated_value)
+                uodate_score = sum(player_cards.values())
+                if 
 
 
 def start_game():
