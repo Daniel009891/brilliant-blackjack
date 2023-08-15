@@ -185,7 +185,7 @@ def player_ace_values(player_cards):
     higher than 21.
     """
     player_score = sum(player_cards.values())
-    if player_cards > 21:
+    if player_score > 21:
         for key, value in player_cards.items():
             if "Ace" in key and value == 11:
                 update_value = {key: 1}
