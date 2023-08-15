@@ -207,8 +207,9 @@ def start_game():
 
 def typingPrint(text):
     """
-    Not my code, taken from
-    https://www.101computing.net/python-typing-text-effect/
+    Gives the typing effect to print statements
+    code has been taken from open source and
+    credited within the README.md
     """
     for character in text:
         sys.stdout.write(character)
@@ -218,8 +219,9 @@ def typingPrint(text):
 
 def typingInput(text):
     """
-    Not my code, taken from
-    https://www.101computing.net/python-typing-text-effect/
+    Gives the typing effect to inputs
+    code has been taken from open source and
+    credited within the README.md
     """
     for character in text:
         sys.stdout.write(character)
