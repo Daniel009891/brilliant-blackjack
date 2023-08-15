@@ -45,7 +45,6 @@ def game_introduction():
             typingPrint("I see.... you need a little help....here you go!")
             time.sleep(1)
             game_rules()
-            
         elif choices == "n":
             print("\n")
             typingPrint("You like to live dangerously.... I "
@@ -53,11 +52,9 @@ def game_introduction():
             print(pyfiglet.figlet_format("\nGame On!"))
             time.sleep(1)
             start_game()
-            
         elif choices == "":
             typingPrint("Sorry you didnt make a selection. "
                         "Please type Y for yes or N for no")
-
         else:
             typingPrint("\nSorry you can only select "
                         "Y for (yes) or N for (no), "
@@ -89,7 +86,7 @@ pack of cards. You will only 'see' one of the computer's cards.
 If you have a score less than 21 points, you will have the option
 to either STICK with the cards you have or TWIST and receive another card.
 
-If you score 21 points with your first 2 cards, you score BLACKJACK and the 
+If you score 21 points with your first 2 cards, you score BLACKJACK and the
 game continues.
 
 If you score more than 21 points, you will be BUST and the game continues.
@@ -116,7 +113,7 @@ def create_pack_of_cards():
     """
     Creates an ordered list (pack) as strings, converts
     list to dictionary pack of cards, to add card values to card keys
-    converts dictionary back to a list (pack), shuffles the pack and 
+    converts dictionary back to a list (pack), shuffles the pack and
     converts the shuffled list to shuffled dictionary.
     """
     pack = []
@@ -131,7 +128,7 @@ def create_pack_of_cards():
     random.shuffle(pack)
     pack = dict(pack)
     return pack
-    
+
 
 def create_computer_cards(pack):
     """
@@ -181,7 +178,7 @@ def create_player_cards(pack):
 def start_game():
     """
     Starts the game and cycles through the associated
-    functions before asking the player if they'd like 
+    functions before asking the player if they'd like
     to play again.
     """
     pack = create_pack_of_cards()
