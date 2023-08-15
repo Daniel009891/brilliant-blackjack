@@ -190,8 +190,13 @@ def player_ace_values(player_cards):
             if "Ace" in key and value == 11:
                 update_value = {key: 1}
                 player_cards.update(updated_value)
-                uodate_score = sum(player_cards.values())
-                if 
+                update_score = sum(player_cards.values())
+                if update_score > 21:
+                    continue
+                else:
+                    player_score = update_score
+                    break
+    return player_score
 
 
 def start_game():
