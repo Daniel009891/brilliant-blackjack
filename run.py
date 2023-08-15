@@ -39,7 +39,7 @@ def game_introduction():
     while True:
         print("\n")
         choices = typingInput("\nWould you like to read the rules of the game?"
-                              "(Type Y for yes and N for no):").lower()
+                              "(Type Y for yes and N for no):\n").lower()
         if choices == "y":
             print("\n")
             typingPrint("I see.... you need a little help....here you go!")
@@ -50,6 +50,7 @@ def game_introduction():
             print("\n")
             typingPrint("You like to live dangerously.... I "
                         "like it! lets play!!!")
+            print(pyfiglet.figlet_format("\nGame On!"))
             time.sleep(1)
             start_game()
             
@@ -156,7 +157,8 @@ def create_player_cards(pack):
     """
     Removes 2 cards for the player from the shuffled
     dictionary, adds them to a new list and converts
-    new list to dictionary.
+    new list to dictionary. Displays total score of hand
+    to player.
     """
     player_cards = []
     while len(player_cards) < 2:
