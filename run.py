@@ -316,6 +316,15 @@ def computer_twist(pack, computer_cards):
         computer_new_card = (f"The computers new card is "
                              f"the {computer_cards_list [-1][0]}")
         typingPrint(computer_new_card)
+        computer_score = sum(computer_cards.values())
+        computer_score = computer_ace_values(computer_cards)
+    time.sleep(1)
+    typingPrint("\n The computer chose to Stick")
+    time.sleep(1)
+    typingPrint("\nThe computer has: ")
+    time.sleep(1)
+    for keys, value in computer_cards.items():
+        print(keys)
     
 
 def start_game():
