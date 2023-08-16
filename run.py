@@ -226,15 +226,18 @@ def player_stick_twist_choice(pack, player_cards):
     to stick with their cards or twist and receive
     another card.
     """
+    print("player_stick_twist_choice started")
     player_score = player_ace_values(player_cards)
     if player_score == 21:
         time.sleep(1)
         print(pyfiglet.figlet_format("***BLACKJACK***"))
         return player_score
     else:
+        print("stick or twist test")
 
 
 def twist():
+    print("twist started")
 
 
 def start_game():
@@ -246,6 +249,7 @@ def start_game():
     pack = create_pack_of_cards()
     computer_cards = create_computer_cards(pack)
     player_cards = create_player_cards(pack)
+    player_score = player_stick_twist_choice(pack, player_cards)
 
 
 def typingPrint(text):
