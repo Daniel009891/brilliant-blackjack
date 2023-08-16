@@ -249,7 +249,7 @@ def player_stick_twist_choice(pack, player_cards):
             elif stick_twist == "s":
                 time.sleep(1)
                 typingPrint("You chose to chicken out! BOOOO!!")
-                you_chose = (f"You chose to stick with"
+                you_chose = (f"\nYou chose to stick with"
                              f"{player_score} points")
 
                 print(you_chose)
@@ -269,15 +269,15 @@ def twist(pack, player_cards):
     """
     player_cards_list = list(player_cards.items())
     time.sleep(1)
-    typingPrint("Dealing you your new card....")
+    typingPrint("\nDealing you your new card....")
     player_cards_list.append(pack.popitem())
     time.sleep(1)
-    new_card = (f"Your new card is the {player_cards_list[-1][0]}")
+    new_card = (f"\nYour new card is the {player_cards_list[-1][0]}")
     typingPrint(new_card)
     player_cards = dict(player_cards_list)
     player_score = sum(player_cards.values())
     time.sleep(1)
-    typingPrint("\n Your cards are: \n")
+    typingPrint("\nYour cards are: \n")
     time.sleep(1)
     for keys, value in player_cards.items():
         print(keys)
