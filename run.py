@@ -349,7 +349,55 @@ def compare_scores(player_score, computer_score):
     compares scores to decide on the winner and
     increments the game wins values in the dictionary
     """
-    print("scores total")
+    typingPrint(f"You scored: {player_score}\n")
+    time.sleep(1)
+    if player_score == 21:
+        if computer_score > 21:
+            print("You won with Blackjack\n")
+            if "Player Wins" in game_wins:
+                game_wins["Player Wins"] += 1
+            elif computer_score == 21:
+                print("You both got Blackjack!! its a draw\n")
+            else:
+                print("You won with Blackjack\n")
+                if "Player Wins" in game_wins:
+                    game_wins["Player Wins"] += 1
+    elif player_score > 21:
+        if computer_score == 21:
+            print("The computer got Blackjack!! you lose!")
+            if "Computer Wins" in game_wins:
+                game_wins["Computer Wins"] += 1
+        elif computer_score > 21:
+            print("You both went bust! Unlucky")
+        elif computer_score < 21:
+            print("The computer won, you lose!")
+            if "Computer Wins" in game_wins:
+                game_wins["Computer Wins"] += 1
+    else:
+        if computer_score == 21:
+            print("The computer got Blackjack!! you lose!")
+            if "Computer Wins" in game_wins:
+                game_wins["Computer Wins"] += 1
+        elif computer_score > 21:
+            print("The computer went Bust! you won!!")
+            if "Player Wins" in game_wins:
+                game_wins["Player Wins"] += 1
+        else:
+            if computer_score < player_score:
+                print("You won the game, well done!\n")
+                if "Player Wins" in game_wins:
+                    game_wins["Player Wins"] += 1
+            elif computer_score > player_score:
+                print("You lost the game, unlucky!\n")
+                if "Computer Wins" in game_wins:
+                    game_wins["Computer Wins"] += 1
+            else:
+                print("Its a draw!!")
+    time.sleep(1)
+    print(f"player Wins: {game_wins["Player Wins"]}")
+    print(f"Computer Wins: {game_wins["Computer Wins"]} \n")
+
+
 
 
 
