@@ -231,6 +231,7 @@ def player_stick_twist_choice(pack, player_cards):
     player_score = player_ace_values(player_cards)
     if player_score == 21:
         time.sleep(1)
+        print("\n")
         print(pyfiglet.figlet_format("***BLACKJACK***"))
         return player_score
     else:
@@ -287,11 +288,13 @@ def twist(pack, player_cards):
         return player_cards
     elif player_score > 21:
         time.sleep(1)
+        print("\n")
         print(pyfiglet.figlet_format("BUST! UNLUCKY!"))
         return player_cards
     else:
         player_score == 21
         time.sleep(1)
+        print("\n")
         print(pyfiglet.figlet_format("BLACKJACK! WELL DONE!"))
         return player_cards
 
@@ -396,13 +399,30 @@ def compare_scores(player_score, computer_score):
                 print("Its a draw!!")
     time.sleep(1)
     print(f"Player Wins: {game_wins['Player Wins']}")
-    print(f"Computer Wins: {game_wins['Computer Wins']} \n")
-    
+    print(f"Computer Wins: {game_wins['Computer Wins']} \n")  
     play_again()
-    
+
 
 def play_again():
-    print("play again")
+    """
+    Asks the user whether they would like to play the
+    game again or exit.
+    """
+    time.sleep(1)
+    new_game = typingInput("Would you like another game? "
+                           "Type Y for yes or N for no").lower()
+    if new_game == "y":
+        print("\n")
+        print(pyfiglet.figlet_format("\nGame On!"))
+    elif new_game == "n":
+        time.sleep(1)
+        print("\n")
+        print(pyfiglet.figlet_format("\nThanks\nfor\nplaying\n"
+                                     "Brilliant Blackjack!!"))
+        sys.exit()
+    else:
+        typingPrint("Sorry you can only select Y to play or N to exit")
+        play_again()
 
 
 def start_game():
