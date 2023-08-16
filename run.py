@@ -302,8 +302,21 @@ def computer_twist(pack, computer_cards):
     score reaches a random number between a
     specified range.
     """
-    print("computer_twist")
-
+    computer_score = sum(computer_cards.values())
+    computer_score = computer_ace_values(computer_cards)
+    while computer_score <= random.choice(range(13, 20)):
+        time.sleep(1)
+        print("\n")
+        typingPrint("\nThe computer decided to Twist!")
+        time.sleep(1)
+        print("\n")
+        typingPrint("\nDealing the computer another card")
+        computer_cards_list = list(computer_cards.items())
+        computer_cards_list.append(pack.popitem())
+        computer_new_card = (f"The computers new card is "
+                             f"the {computer_cards_list [-1][0]}")
+        typingPrint(computer_new_card)
+    
 
 def start_game():
     """
