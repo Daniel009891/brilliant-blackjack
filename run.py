@@ -304,7 +304,7 @@ def computer_twist(pack, computer_cards):
     """
     computer_score = sum(computer_cards.values())
     computer_score = computer_ace_values(computer_cards)
-    while computer_score <= random.choice(range(13, 20)):
+    while computer_score <= 18:
         time.sleep(1)
         print("\n")
         typingPrint("\nThe computer decided to Twist!")
@@ -313,11 +313,13 @@ def computer_twist(pack, computer_cards):
         typingPrint("\nDealing the computer another card")
         computer_cards_list = list(computer_cards.items())
         computer_cards_list.append(pack.popitem())
-        computer_new_card = (f"The computers new card is "
+        computer_new_card = (f"\nThe computers new card is "
                              f"the {computer_cards_list [-1][0]}")
         typingPrint(computer_new_card)
+        
         computer_score = sum(computer_cards.values())
         computer_score = computer_ace_values(computer_cards)
+        print(f"The computers score is {computer_score}")
     time.sleep(1)
     typingPrint("\n The computer chose to Stick")
     time.sleep(1)
@@ -325,7 +327,21 @@ def computer_twist(pack, computer_cards):
     time.sleep(1)
     for keys, value in computer_cards.items():
         print(keys)
-    
+    time.sleep(1)
+    typingPrint(f"\nThe computer scored: {computer_score}")
+    if computer_score == 21:
+        time.sleep(1)
+        print("\n")
+        print(pyfiglet.figlet_format("THE COMPUTER HAS BLACKJACK!"))
+        return computer_score
+    elif computer_score > 21:
+        time.sleep(1)
+        print("\n")
+        print(pyfiglet.figlet_format("THE COMPUTER BUST!"))
+        return computer_score
+    else:
+        return computer_score
+
 
 def start_game():
     """
