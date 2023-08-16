@@ -41,8 +41,7 @@ def game_rules_options():
     Gives the user the option to read the rules
     or play the game without.
     """
-
-    while True:
+    
         choices = typingInput("\nWould you like to read the rules of the game?"
                               "(Type Y for yes and N for no):\n").lower()
         if choices == "y":
@@ -220,6 +219,7 @@ def computer_ace_values():
                     break
     return computer_score
 
+
 def player_stick_twist_choice(pack, player_cards):
     """
     Displays a messgae to the user asking if they'd like
@@ -233,11 +233,46 @@ def player_stick_twist_choice(pack, player_cards):
         print(pyfiglet.figlet_format("***BLACKJACK***"))
         return player_score
     else:
-        print("stick or twist test")
+        while player_score > 21:
+            stick_twist = typingInput("\nWould you like to risk it all"
+                                      "and twist? or chicken out and stick?"
+                                      "Please select S for stick"
+                                      "or T for twist: ").lower()
+            if stick_twist == "T":
+                time.sleep(1)
+                typingPrint("You chose to be brave! excellent!")
+                player_cards = twist(pack, player_cards)
+                player_score = sum(player_cards.values())
+                continue
+            elif stick_twist == "S":
+                time.sleep(1)
+                typingPrint("You chose to chicken out! BOOOO!!")
+                you_chose = (f"You chose to stick with"
+                             f"{player_score} points")
+
+                print(you_chose)
+                return player_score
+                break
+            else:
+                typingPrint("Sorry you can only chose to"
+                            "Stick (S) or Twist (T)")
+                continue
+        return player_score
+
+
 
 
 def twist():
-    print("twist started")
+    """
+    Gives the player a new card from the deck and adds
+    it to the players score.
+    """
+    player_cards_list = list(player_cards.items())
+    time.sleep(1)
+    typingPrint("Dealing you your new card....")
+    player_cards_list.append(pack.popitem())
+    time.sleep(1)
+    new_card = (f"Your new card is the {player_cards_list[-1][0]}")
 
 
 def start_game():
