@@ -209,10 +209,10 @@ def computer_ace_values(computer_cards):
     """
     computer_score = sum(computer_cards.values())
     if computer_score > 21:
-        for key, value in computer_score.items():
+        for key, value in computer_cards.items():
             if "Ace" in key and value == 11:
                 updated_value = {key: 1}
-                computer_score.update(updated_value)
+                computer_cards.update(updated_value)
                 update_score = sum(computer_cards.values())
                 if update_score > 21:
                     continue
@@ -343,6 +343,16 @@ def computer_twist(pack, computer_cards):
         return computer_score
 
 
+def compare_scores(player_score, computer_score):
+    """
+    Prints the players score again and then
+    compares scores to decide on the winner and
+    increments the game wins values in the dictionary
+    """
+    print("scores total")
+
+
+
 def start_game():
     """
     Starts the game and cycles through the associated
@@ -354,6 +364,7 @@ def start_game():
     player_cards = create_player_cards(pack)
     player_score = player_stick_twist_choice(pack, player_cards)
     computer_score = computer_twist(pack, computer_cards)
+    compare_scores(player_score, computer_score)
 
 
 def typingPrint(text):
