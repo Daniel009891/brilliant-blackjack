@@ -352,7 +352,7 @@ def compare_scores(player_score, computer_score):
     compares scores to decide on the winner and
     increments the game wins values in the dictionary
     """
-    game_wins = {"Player Wins": 0, "Computer Wins": 0}
+    
     typingPrint(f"You scored: {player_score}\n")
     time.sleep(1)
     if player_score == 21:
@@ -410,10 +410,11 @@ def play_again():
     """
     time.sleep(1)
     new_game = typingInput("Would you like another game? "
-                           "Type Y for yes or N for no").lower()
+                           "Type Y for yes or N for no: ").lower()
     if new_game == "y":
         print("\n")
         print(pyfiglet.figlet_format("\nGame On!"))
+        start_game()
     elif new_game == "n":
         time.sleep(1)
         print("\n")
@@ -463,6 +464,9 @@ def typingInput(text):
         time.sleep(0.05)
     value = input()
     return value
+
+
+game_wins = {"Player Wins": 0, "Computer Wins": 0}
 
 
 game_introduction()
