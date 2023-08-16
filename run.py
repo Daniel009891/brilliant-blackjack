@@ -349,6 +349,7 @@ def compare_scores(player_score, computer_score):
     compares scores to decide on the winner and
     increments the game wins values in the dictionary
     """
+    game_wins = {"Player Wins": 0, "Computer Wins": 0}
     typingPrint(f"You scored: {player_score}\n")
     time.sleep(1)
     if player_score == 21:
@@ -394,11 +395,14 @@ def compare_scores(player_score, computer_score):
             else:
                 print("Its a draw!!")
     time.sleep(1)
-    print(f"player Wins: {game_wins["Player Wins"]}")
-    print(f"Computer Wins: {game_wins["Computer Wins"]} \n")
+    print(f"Player Wins: {game_wins['Player Wins']}")
+    print(f"Computer Wins: {game_wins['Computer Wins']} \n")
+    
+    play_again()
+    
 
-
-
+def play_again():
+    print("play again")
 
 
 def start_game():
