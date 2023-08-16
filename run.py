@@ -200,7 +200,7 @@ def player_ace_values(player_cards):
     return player_score
 
 
-def computer_ace_values():
+def computer_ace_values(computer_cards):
     """
     Analizes the computers cards for aces if score is
     greater than 21 and changes one ace value from
@@ -273,6 +273,7 @@ def twist(pack, player_cards):
     player_cards_list.append(pack.popitem())
     time.sleep(1)
     new_card = (f"Your new card is the {player_cards_list[-1][0]}")
+    
 
 
 def start_game():
@@ -289,7 +290,7 @@ def start_game():
 
 def typingPrint(text):
     """
-    Gives the typing effect to print statements
+    Gives the typing effect to print statements,
     code has been taken from open source and
     credited within the README.md
     """
@@ -301,7 +302,7 @@ def typingPrint(text):
 
 def typingInput(text):
     """
-    Gives the typing effect to inputs
+    Gives the typing effect to inputs,
     code has been taken from open source and
     credited within the README.md
     """
