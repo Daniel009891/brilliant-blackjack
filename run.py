@@ -220,7 +220,18 @@ def computer_ace_values():
                     break
     return computer_score
 
-def player_stick_twist_choice():
+def player_stick_twist_choice(pack, player_cards):
+    """
+    Displays a messgae to the user asking if they'd like
+    to stick with their cards or twist and receive
+    another card.
+    """
+    player_score = player_ace_values(player_cards)
+    if player_score == 21:
+        time.sleep(1)
+        print(pyfiglet.figlet_format("***BLACKJACK***"))
+        return player_score
+    else:
 
 
 def twist():
