@@ -296,6 +296,13 @@ def twist(pack, player_cards):
         return player_cards
 
 
+def computer_twist(pack, computer_cards):
+    """
+    selects new cards for the computer until the
+    score reaches a random number between a
+    specified range.
+    """
+    print("computer_twist")
 
 
 def start_game():
@@ -308,6 +315,7 @@ def start_game():
     computer_cards = create_computer_cards(pack)
     player_cards = create_player_cards(pack)
     player_score = player_stick_twist_choice(pack, player_cards)
+    computer_score = computer_twist(pack, computer_cards)
 
 
 def typingPrint(text):
