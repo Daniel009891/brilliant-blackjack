@@ -188,7 +188,7 @@ def player_ace_values(player_cards):
     if player_score > 21:
         for key, value in player_cards.items():
             if "Ace" in key and value == 11:
-                update_value = {key: 1}
+                updated_value = {key: 1}
                 player_cards.update(updated_value)
                 update_score = sum(player_cards.values())
                 if update_score > 21:
@@ -208,17 +208,22 @@ def computer_ace_values():
     """
     computer_score = sum(computer_cards.values())
     if computer_score > 21:
-            for key, value in computer_score.items():
-                if "Ace" in key and value == 11:
-                    update_value = {key: 1}
-                    computer_score.update(updated_value)
-                    update_score = sum(computer_cards.values())
-                    if update_score > 21:
-                        continue
-                    else:
-                        computer_score = update_score
-                        break
+        for key, value in computer_score.items():
+            if "Ace" in key and value == 11:
+                updated_value = {key: 1}
+                computer_score.update(updated_value)
+                update_score = sum(computer_cards.values())
+                if update_score > 21:
+                    continue
+                else:
+                    computer_score = update_score
+                    break
     return computer_score
+
+def player_stick_twist_choice():
+
+
+def twist():
 
 
 def start_game():
