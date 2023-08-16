@@ -273,7 +273,29 @@ def twist(pack, player_cards):
     player_cards_list.append(pack.popitem())
     time.sleep(1)
     new_card = (f"Your new card is the {player_cards_list[-1][0]}")
-    
+    typingPrint(new_card)
+    player_cards = dict(player_cards_list)
+    player_score = sum(player_cards.values())
+    time.sleep(1)
+    typingPrint("\n Your cards are: \n")
+    time.sleep(1)
+    for keys, value in player_cards.items():
+        print(keys)
+    player_score = player_ace_values(player_cards)
+    time.sleep(1)
+    if player_score < 21:
+        return player_cards
+    elif player_score > 21:
+        time.sleep(1)
+        print(pyfiglet.figlet_format("BUST! UNLUCKY!"))
+        return player_cards
+    else:
+        player_score == 21
+        time.sleep(1)
+        print(pyfiglet.figlet_format("BLACKJACK! WELL DONE!"))
+        return player_cards
+
+
 
 
 def start_game():
