@@ -19,20 +19,21 @@ def game_introduction():
     # player name input
     print(pyfiglet.figlet_format("WELCOME TO\n BRILLIANT BLACKJACK"))
     time.sleep(1)
-    while True:
-        name = typingInput("\nWelcome! please enter your name:\n").capitalize()
-        if (name != "Computer") and (name != ""):
-            print("\n")
-            print(pyfiglet.figlet_format(f"Welcome {name}!\n"))
-            game_rules_options()
+    name = typingInput("\nWelcome! please enter your name:\n").capitalize()
+    if (name != "Computer") and (name != ""):
+        print("\n")
+        print(pyfiglet.figlet_format(f"Welcome {name}!\n"))
+        game_rules_options()
 
-        elif name == "Computer":
-            typingPrint("\nSorry you cannot be the computer! "
-                        "please enter a valid name!\n")
-            print("\n")
-        else:
-            typingPrint("\nSorry you didn't input a name! "
-                        "please enter a valid name!\n")
+    elif name == "Computer":
+        typingPrint("\nSorry you cannot be the computer! "
+                    "please enter a valid name!\n")
+        print("\n")
+        game_introduction()
+    else:
+        typingPrint("\nSorry you didn't input a name! "
+                    "please enter a valid name!\n")
+        game_introduction()
     print("\n")
 
 
@@ -41,26 +42,27 @@ def game_rules_options():
     Gives the user the option to read the rules
     or play the game without.
     """
-    
-        choices = typingInput("\nWould you like to read the rules of the game?"
-                              "(Type Y for yes and N for no):\n").lower()
-        if choices == "y":
-            print("\n")
-            typingPrint("I see.... you need a little help....here you go!")
-            time.sleep(1)
-            game_rules()
-        elif choices == "n":
-            print("\n")
-            typingPrint("You like to live dangerously.... I "
-                        "like it! lets play!!!")
-            print(pyfiglet.figlet_format("\nGame On!"))
-            time.sleep(1)
-            start_game()    
-        else:
-            typingPrint("\nSorry you can only select "
-                        "Y for (yes) or N for (no), "
-                        "please try again!\n")
-            print("\n")
+
+    choices = typingInput("\nWould you like to read the rules of the game?"
+                          "(Type Y for yes and N for no):\n").lower()
+    if choices == "y":
+        print("\n")
+        typingPrint("I see.... you need a little help....here you go!")
+        time.sleep(1)
+        game_rules()
+    elif choices == "n":
+        print("\n")
+        typingPrint("You like to live dangerously.... I "
+                    "like it! lets play!!!")
+        print(pyfiglet.figlet_format("\nGame On!"))
+        time.sleep(1)
+        start_game()    
+    else:
+        typingPrint("\nSorry you can only select "
+                    "Y for (yes) or N for (no), "
+                    "please try again!\n")
+        print("\n")
+        game_rules_options()
 
 
 def game_rules():
@@ -94,20 +96,20 @@ If you score more than 21 points, you will be BUST and the game continues.
 
 The computer will choose to 'TWIST' or 'STICK' - which finishes the game
     """)
-    while True:
-        options = typingInput("\nwould you like to start the game? "
-                              "Please select Y to play or No"
-                              "to exit:\n").lower()
-        if options == "n":
-            typingPrint("\nSorry to see you go!!")
-            print(pyfiglet.figlet_format("\nCome Back Soon"))
-            sys.exit()
-        elif options == "y":
-            print(pyfiglet.figlet_format("\nGame On!"))
-            start_game()
+    options = typingInput("\nwould you like to start the game? "
+                          "Please select Y to play or No"
+                          "to exit:\n").lower()
+    if options == "n":
+        typingPrint("\nSorry to see you go!!")
+        print(pyfiglet.figlet_format("\nCome Back Soon"))
+        sys.exit()
+    elif options == "y":
+        print(pyfiglet.figlet_format("\nGame On!"))
+        start_game()
 
-        else:
-            typingPrint("Sorry you can only select Y to play or N to exit")
+    else:
+        typingPrint("Sorry you can only select Y to play or N to exit")
+        game_rules_options()
 
 
 def create_pack_of_cards():
@@ -226,25 +228,25 @@ def player_stick_twist_choice(pack, player_cards):
     to stick with their cards or twist and receive
     another card.
     """
-    print("player_stick_twist_choice started")
     player_score = player_ace_values(player_cards)
     if player_score == 21:
         time.sleep(1)
         print(pyfiglet.figlet_format("***BLACKJACK***"))
         return player_score
     else:
-        while player_score > 21:
-            stick_twist = typingInput("\nWould you like to risk it all"
-                                      "and twist? or chicken out and stick?"
-                                      "Please select S for stick"
+        while player_score < 21:
+            stick_twist = typingInput("\nWould you like to risk it all "
+                                      "and twist? or chicken out and stick? "
+                                      "Please select S for stick "
                                       "or T for twist: ").lower()
-            if stick_twist == "T":
+            
+            if stick_twist == "t":
                 time.sleep(1)
                 typingPrint("You chose to be brave! excellent!")
                 player_cards = twist(pack, player_cards)
                 player_score = sum(player_cards.values())
                 continue
-            elif stick_twist == "S":
+            elif stick_twist == "s":
                 time.sleep(1)
                 typingPrint("You chose to chicken out! BOOOO!!")
                 you_chose = (f"You chose to stick with"
@@ -260,9 +262,7 @@ def player_stick_twist_choice(pack, player_cards):
         return player_score
 
 
-
-
-def twist():
+def twist(pack, player_cards):
     """
     Gives the player a new card from the deck and adds
     it to the players score.
