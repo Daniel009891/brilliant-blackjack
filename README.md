@@ -21,34 +21,33 @@ Users will play against the computer to get blackjack or as close to it as they 
 
 As a user,
 
-* I would like the website to be visually appealing.
-* I would like to be able to navigate easily through the website.
-* I would like to test my knowledge with an interactive quiz.
-* I would like to be able to recieve feedback on correct and incorrect answers.
+* I would like the game to be fun.
+* I would like to be able to navigate easily through the game.
+* I would like to compete against a computer.
+* I would like to be able to recieve feedback on scores and cards dealt.
 
 ### Initial Concept
 
-The initial concept was to create a website that features a simple interactive quiz for the purpose of testing existing electrical knowledge. 
-
-### Website Structure
-
-Bright Spark consists of two HTML pages. The layout of the website is simple and consistent. A start button on the first html page makes it simple and easy for the user to start the quiz.
-
-The second page consists of the Javascript quiz which offers feedback on correct and incorrect answers throughout with the aid of colors to denote these. Green shows a correct answer and red shows an incorrect answer.
-
-The website is fully responsive to different screen sizes and the layout adapts and changes as the screen sizes decrease. This was found to be the best option to keep a clear and concise website. Headings and buttons change size as the screen sizes get smaller, so as to not disform the layout. 
-
-### Imagery
-
-The background image has been chosen to highight the spark element of the title and allows a good contrast for headings and buttons.
+The initial concept was to create a fun terminal based game of blackjack, which enables users to compete against the computer, to see their scores for their hand and see the total scores of games won. 
 
 ## Features
 
 ### Existing Features
 
-#### Start button and h1 element
+#### Landing Page
 
-Featured on the first HTML page, the start button allows the user to be linked to the start of the quiz, the h1 element shows the user the name of the website.
+![Landing Page](documentation/brilliant-blackjack-welcome.png)
+
+The landing page displays a welcome message to the user and asks them to enter their name before playing.
+
+#### Enter Name
+
+Beneath the welcome message the game asks the user to enter a name, this can be seen in the image above.
+
+#### Game Rules
+
+
+
 
 ### Features Left to Implement
 
@@ -76,32 +75,18 @@ Featured on the first HTML page, the start button allows the user to be linked t
 
 The website was fully validated to ensure there were no syntax errors. The official [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) were used for the validation and no errors were found. [JSHint](https://jshint.com/) was used to ensure no errors were found within the JavaScript. 15 warnings were detected but these relate to some syntaxes only being available in ES6. 
 
-### Brower Compatibility
-
-Appearance, functionality and responsiveness of the website were tested with the following browsers:
-
-* Google Chrome
-* Safari
-* Microsoft Edge
-
-As part of this testing, the following were tested and no issues were found:
-
-* All internal links function as expected.
-* All features function as expected.
-* Responsiveness to different screen sizes - font sizes, margins, buttons and overall spacing.
-
-The website was also manually tested on iPhone 12 pro, samsung galaxy tab e and HP pavillion laptop for the above. No issues were found.
-
 ### Resolved Bugs
 
-* A bug was fixed where the questions and answers were not displayed in the quiz area, this was found to be a grammatical error in the element id for answer buttons and questions id in the script.js.
+* 
 
 ### Unresolved Bug
 
-* Unfortunately i cannot get the favicon icon working, so this is an unresolved bug.
+* 
 
 ## Deployment
+
 ### Version Control
+
 The version control was maintained using git within Visual Studio Code to push code to the main repository.
 
  * From the VS Code terminal type `"git add ."`, to make changes and/or updates to the files.
@@ -132,15 +117,10 @@ The version control was maintained using git within Visual Studio Code to push c
 
 ### Contents
 
-### Media
-
-* Images used were sourced from [shutterstock.com](https://www.shutterstock.com/).
-
 ### Codes
 
 * The question layout and function ideas were inspired by the [stackoverflow.com](https://stackoverflow.com/questions/75996907/trying-to-implement-a-scoring-system-to-a-web-based-trivia-game) forum submission.
 
-* The container method was inspired by [linuxhint.com](https://linuxhint.com/how-to-make-html-container-box-in-html/#b1).
 
 ## Acknowledgements
 

@@ -97,7 +97,7 @@ If you score more than 21 points, you will be BUST and the game continues.
 The computer will choose to 'TWIST' or 'STICK' - which finishes the game
     """)
     options = typingInput("\nwould you like to start the game? "
-                          "Please select Y to play or No"
+                          "Please select Y to play or N "
                           "to exit:\n").lower()
     if options == "n":
         typingPrint("\nSorry to see you go!!")
@@ -147,7 +147,7 @@ def create_computer_cards(pack):
         time.sleep(1)
         typingPrint("The computers show card is: ")
         print("\n")
-        print(f"{computer_cards[0][0]}")
+        print(f"{computer_cards [0][0]}")
         time.sleep(1)
         computer_cards = dict(computer_cards)
         return computer_cards
@@ -272,7 +272,7 @@ def twist(pack, player_cards):
     typingPrint("\nDealing you your new card....")
     player_cards_list.append(pack.popitem())
     time.sleep(1)
-    new_card = (f"\nYour new card is the {player_cards_list[-1][0]}")
+    new_card = (f"\nYour new card is the\n{player_cards_list[-1][0]}")
     typingPrint(new_card)
     player_cards = dict(player_cards_list)
     player_score = sum(player_cards.values())
