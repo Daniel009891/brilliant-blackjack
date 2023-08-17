@@ -56,7 +56,7 @@ def game_rules_options():
                     "like it! lets play!!!")
         print(pyfiglet.figlet_format("\nGame On!"))
         time.sleep(1)
-        start_game()    
+        start_game()
     else:
         typingPrint("\nSorry you can only select "
                     "Y for (yes) or N for (no), "
@@ -240,7 +240,6 @@ def player_stick_twist_choice(pack, player_cards):
                                       "and twist? or chicken out and stick? "
                                       "Please select S for stick "
                                       "or T for twist: ").lower()
-            
             if stick_twist == "t":
                 time.sleep(1)
                 typingPrint("You chose to be brave! excellent!")
@@ -352,7 +351,6 @@ def compare_scores(player_score, computer_score):
     compares scores to decide on the winner and
     increments the game wins values in the dictionary
     """
-    
     typingPrint(f"You scored: {player_score}\n")
     time.sleep(1)
     if player_score == 21:
@@ -399,7 +397,7 @@ def compare_scores(player_score, computer_score):
                 print("Its a draw!!")
     time.sleep(1)
     print(f"Player Wins: {game_wins['Player Wins']}")
-    print(f"Computer Wins: {game_wins['Computer Wins']} \n")  
+    print(f"Computer Wins: {game_wins['Computer Wins']} \n")
     play_again()
 
 
