@@ -42,16 +42,6 @@ The website is fully responsive to different screen sizes and the layout adapts 
 
 The background image has been chosen to highight the spark element of the title and allows a good contrast for headings and buttons.
 
-### Colour Scheme
-
-The colour scheme for the website is minimilistic to enable all users to read the text without any posibility of clashing with backgrounds. Yellow text contrasts with the blue elements of the background image to allow the text to be read easily. All buttons also take advantage of this, having the same contrasting colours which invert using the hover feature in CSS.
-
-The colour for the headings and general text is Chartreuse hex #dffe00, when text is used on a button the colour is Trapped darkness hex #0c192c with a background of Chartreuse hex #dffe00. A hover feature enables these to invert to create a further contrast and alert the user of a button. 
-
-### Typography
-
-There is only one font used in the website and it is imported from [Google Fonts](https://fonts.google.com/). Shadows Into Light was picked due to its exiting and upbeat feel, this compliments the topic beautifully as electricity and sparks are often represented this way.
-
 ## Features
 
 ### Existing Features
@@ -59,33 +49,6 @@ There is only one font used in the website and it is imported from [Google Fonts
 #### Start button and h1 element
 
 Featured on the first HTML page, the start button allows the user to be linked to the start of the quiz, the h1 element shows the user the name of the website.
-
-#### Start button and h1 for screen sizes <350px
-
-![Start button and h1 less than 350px](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-mobile.png)
-
-At 350px the heading text will stack in such a way that it will fit the screen nicely but not obstruct the start button. The start button keeps the same distance between the heading and itself. 
-
-#### Start button and h1 for screen sizes >1100px
-
-![Start button and h1 less than 1100px](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-desktop.png)
-
-at 1100px the h1 element and start button will fill the screen area without stacking text on top of each other. The start button will mainitain an equal distance from the heading element to avoid looking cluttered.  
-
-
-#### The Quiz page
-
-The second HTML page dislays the actual quiz, this consists of a h2 element, a h3 element, 4 answer buttons and a next button. 
-
-##### Greater than 1100px
-
-![Quiz page at greater than 1100px](https://github.com/Daniel009891/bright-spark/blob/main/documentation/quiz-page-desktop.png)
-
-##### less than 450px
-
-![Hero image at less than 350px](https://github.com/Daniel009891/bright-spark/blob/main/documentation/quiz-page-mobile.png)
-
-At less than 450px the quiz area is condensed, the answer buttons are made smaller and the heading text is stacked to accomodate the smaller area. The space between the answer buttons is maintained. 
 
 ### Features Left to Implement
 
@@ -113,26 +76,6 @@ At less than 450px the quiz area is condensed, the answer buttons are made small
 
 The website was fully validated to ensure there were no syntax errors. The official [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) were used for the validation and no errors were found. [JSHint](https://jshint.com/) was used to ensure no errors were found within the JavaScript. 15 warnings were detected but these relate to some syntaxes only being available in ES6. 
 
-### Lighthouse
-
-The website was tested with Lighthouse in the Dev Tools for performance, accessibility, best practices, and SEO.
-
-##### Results for index.html for desktop
-
-![Image showing results for index.html on desktop](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-lighthouse-desktop-start-page.png)
-
-##### Results for index.html for mobile
-
-![Image showing results for index.html on mobile](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-lighthouse-mobile-start-page.png)
-
-##### Results for quiz.html for desktop
-
-![Image showing results for quiz.html on desktop](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-lighthouse-desktop-quiz-page.pngg)
-
-##### Results for quiz.html for mobile
-
-![Image showing results for quiz.html on mobile](https://github.com/Daniel009891/bright-spark/blob/main/documentation/bright-spark-lighthouse-mobile-quiz-page.png)
-
 ### Brower Compatibility
 
 Appearance, functionality and responsiveness of the website were tested with the following browsers:
@@ -149,16 +92,6 @@ As part of this testing, the following were tested and no issues were found:
 
 The website was also manually tested on iPhone 12 pro, samsung galaxy tab e and HP pavillion laptop for the above. No issues were found.
 
-### Responsiveness
-
-Responsiveness design tests were executed using [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) and no issues were found. This included the following devices:
-
-* iPhone 4, SE, XR, 12 Pro, 5/SE, 6/7/8, 6/7/8 Plus and X
-* iPad Air and iPad Mini
-* Samsung Galaxy S8+, S20 Ultra
-* Microsoft Surface Pro 7 and Duo
-* Nest Hub and Hub Max
-
 ### Resolved Bugs
 
 * A bug was fixed where the questions and answers were not displayed in the quiz area, this was found to be a grammatical error in the element id for answer buttons and questions id in the script.js.
@@ -168,32 +101,32 @@ Responsiveness design tests were executed using [Chrome Dev Tools](https://devel
 * Unfortunately i cannot get the favicon icon working, so this is an unresolved bug.
 
 ## Deployment
+### Version Control
+The version control was maintained using git within Visual Studio Code to push code to the main repository.
 
-The website has been deployed to GitHub pages.
-The live link can be found here - [Bright Spark](https://daniel009891.github.io/bright-spark/)
+ * From the VS Code terminal type `"git add ."`, to make changes and/or updates to the files.
 
-### Deploying a GitHub Repository to GitHub Pages
+ * Type `"git commit -m (insert a short descriptive text)"`, which commits the changes and updates the files.
 
-1. Navigate to the "Settings" tab in the GitHub repository.
-2. Select "Pages" from the menu on the left.
-3. Under the "Source" section, select "Deploy from a branch" and "Branch: main." Click on "Save."
-4. GitHub takes a short while to publish the website. Refresh the page, if not done automatically, and once the website is deployed, the URL will be displayed.  
+ * Use the `"git push"` command, which pushes the committed changes to the main repository. 
 
-### Forking the GitHub Repository
+ ### Page Deployment
+ The app was deployed to Heroku CLI. The steps to deploy are as follows:
 
-To make a copy or "fork" the original repository to view or make changes without affecting the original repository,
+ * After creating an account and logging in, click `"New"` to create a new app from the dashboard.
+ * Create a unique name for the app and select my region; press `"Create app"`.
+ * Go to `"Settings"` and navigate to `Config Vars`.
+ * Add Config Vars. 
+   * For this app was only used: `KEY` = `PORT` : `VALUE` = `8000`.
+ * Add buildpacks `Python` and `NodeJS` - in this order.
+ * Click the `Deploy Branch`.
+ * Scroll Down to Deployment Method and select GitHub.
+ * Select the repository to be deployed and connect to Heroku.
+ * Scroll down to deploy: 
+    * `Option 1` is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
 
-1. Log into GitHub and locate the repository.
-2. Select the "Fork" option at the top of the screen to create a copy of the repository.
-3. This will create a copy of the repository in your GitHub account.
+* Live deployment [Brilliant Blackjack] (https://brilliant-blackjack-94e6e2e8e263.herokuapp.com/)
 
-### Creating a Local Clone
-
-1. In the GitHub repository, select the "Code" button.
-2. In the "Clone" box, under the "HTTPS" tab, click on the clipboard icon to copy the URL.
-3. In Gitpod, change the current working directory to the location you would like the cloned directory to be created.
-4. Type "git clone" and then paste the URL copied from GitHub.
-5. Press "Enter" and the local clone will be created.
 
 ## Credits
 
