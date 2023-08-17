@@ -38,6 +38,11 @@ The initial concept was to create a fun terminal based game of blackjack, which 
 
 * Scores - The game displays the initial scores for both the player and the computer, this is updated when the player or computer twists and recieves a new card. The scores are set to bust at > 21 within the twist functions. The total wins are also displayed and incremented after every round.
 
+#### Flowchart
+
+![Flowchart](documentation/brilliant-blackjack-flow-chart.png)
+
+
 ### Existing Features
 
 #### Landing Page
