@@ -256,7 +256,7 @@ def player_stick_twist_choice(pack, player_cards):
                 return player_score
                 break
             else:
-                typingPrint("Sorry you can only chose to"
+                typingPrint("Sorry you can only chose to "
                             "Stick (S) or Twist (T)")
                 continue
         return player_score
