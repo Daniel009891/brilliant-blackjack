@@ -5,17 +5,15 @@ Brilliant Blackjack is a python terminal game, which runs in a mock terminal thr
 
 Users will play against the computer to get blackjack or as close to it as they dare. Each round will add to a total score bewtween player and computer. The aim of the game is to beat the computer.
 
-![Responsive view of Bright Spark start page on all devices](documentation/start-page-responsive-mockup.png)
-
-![Responsive view of Bright Spark quiz page on all devices](documentation/quiz-page-responsive-mockup.png)
+![Responsive view of Brilliant Blackjack on large devices](documentation/brilliant-blackjack-mockup.png)
 
 ## Live Website
 
-[Bright Spark](https://daniel009891.github.io/bright-spark/)
+[Brilliant Blackjack](https://brilliant-blackjack-94e6e2e8e263.herokuapp.com/)
 
 ## Repository
 
-[Repository Link](https://github.com/Daniel009891/bright-spark)
+[Repository Link](https://github.com/Daniel009891/brilliant-blackjack)
 
 ## UX: User Experience
 
