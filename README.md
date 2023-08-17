@@ -32,6 +32,12 @@ The initial concept was to create a fun terminal based game of blackjack, which 
 
 ## Features
 
+* Interaction - Players can interact with the game by choosing to stick with their initial cards or twist to receive a new card from the deck. this is done by the use of functions which randomly select a new card from the deck and append it into the users cards. 
+
+* Computer AI - The computer will make decisions on whether to stick or twist by using logic. The computers decision is cretaed by a function that specifies a random range between 16 and 19 which is based off the score that the computer initially has. 
+
+* Scores - The game displays the initial scores for both the player and the computer, this is updated when the player or computer twists and recieves a new card. The scores are set to bust at > 21 within the twist functions. The total wins are also displayed and incremented after every round.
+
 ### Existing Features
 
 #### Landing Page
@@ -47,6 +53,7 @@ Beneath the welcome message the game asks the user to enter a name, this can be 
 The enter name has validation to stop the user entering a blank name and entering "computer" as a name. An error message is displayed prompting the user to try again. 
 
 ![Enter Name](documentation/error-message-no-name.png)
+
 ![Enter Name](documentation/error-message-no-name.png)
 
 #### Game Rules
@@ -58,10 +65,13 @@ Before starting the game, the user has the option to review the game rules or pl
 The game rules options have validation to ensure the user only selects "Y" or "N". If the user enters anything other than that, the error message Sorry you can only select Y for (yes) or N for (no), please try again!" 
 
 ![Game Rules](documentation/error-message-invalid-selection-rules.png)
+
 ![Game Rules](documentation/error-message-no-selection-rules.png)
 
 When the user enters the correct input of "Y" a display of the rules is brought up for the user to read.
+
 ![Game Rules](documentation/brilliant-blackjack-rules-heading.png)
+
 ![Game Rules](documentation/brilliant-blackjack-rules.png)
 
 If the user decides not to read the rules the game will begin.
@@ -125,9 +135,9 @@ The website was fully validated using the PEP8CI validator and returned no error
 
 ### Version Control
 
-The version control was maintained using git within Visual Studio Code to push code to the main repository.
+The version control was maintained using git within Codeanywhere to push code to the main repository.
 
- * From the VS Code terminal type `"git add ."`, to make changes and/or updates to the files.
+ * From the Codeanywhere terminal type `"git add ."`, to make changes and/or updates to the files.
 
  * Type `"git commit -m (insert a short descriptive text)"`, which commits the changes and updates the files.
 
@@ -148,7 +158,7 @@ The version control was maintained using git within Visual Studio Code to push c
  * Scroll down to deploy: 
     * `Option 1` is selecting Automatic deploys (Will Update Automatically with every "git push"). This was chosen for this project.
 
-* Live deployment [Brilliant Blackjack] (https://brilliant-blackjack-94e6e2e8e263.herokuapp.com/)
+* Live deployment [Brilliant Blackjack](https://brilliant-blackjack-94e6e2e8e263.herokuapp.com/)
 
 
 ## Credits
@@ -157,11 +167,21 @@ The version control was maintained using git within Visual Studio Code to push c
 
 ### Codes
 
-* 
+* The code used for the typing input and typing print was taken from [101 computing.net](https://www.101computing.net/python-typing-text-effect/)
+
+### Libraries
+
+* Random - has been used to generate random cards for the user and computer, it has also been used to randomly select whether the computer twists or sticks using a range based on total score of cards. The random feature was implemented by researching it on [Python for beginners](https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python)
+
+* pyfiglet - Has been used to create a bold decorative text for certain print statements within the project, this adds to the user experience and is visually appealing. The pyfiglet feature was implemented by researching it on [Java T point](https://www.javatpoint.com/python-pyfiglet-module)
+
+* Time - has been used to add a sleep time in certain parts of the project to give the appearance of loading before a statement of input is shown to the user. The Time feature was implemented by researching it on [Python](https://docs.python.org/3/library/time.html)
+
+* Sys - has been used to allow the game to end when the user selects a certain option within the game when prompted to. The Time feature was implemented by researching it on [Python](https://docs.python.org/3/library/sys.html)
 
 
 ## Acknowledgements
 
-This website was created as a portfolio 1 project for the Full Stack Software Development course at [Code Institute](https://codeinstitute.net/ie/). I would like to thank my mentor, [Harry Dhillon](https://github.com/Harry-Leepz), for the guidance and encouragement given throughout the project. Following his valuable feedback and advice, the website has been refined to be more intuitive and it has improved the overall user experience.
+This website was created as a portfolio 1 project for the Full Stack Software Development course at [Code Institute](https://codeinstitute.net/ie/). I would like to thank my mentor, [Harry Dhillon](https://github.com/Harry-Leepz), for the guidance and encouragement given throughout the project. Following his valuable feedback and advice, the project has been refined to be more intuitive and it has improved the overall user experience.
 
-I would also like to thank the slack community at Code institute, the issues with functio
+I would also like to thank the slack community at Code institute, for help and guidence with some issues I faced.
