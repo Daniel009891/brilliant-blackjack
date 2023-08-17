@@ -249,7 +249,7 @@ def player_stick_twist_choice(pack, player_cards):
             elif stick_twist == "s":
                 time.sleep(1)
                 typingPrint("You chose to chicken out! BOOOO!!")
-                you_chose = (f"\nYou chose to stick with"
+                you_chose = (f"\nYou chose to stick with "
                              f"{player_score} points")
 
                 print(you_chose)
@@ -351,7 +351,7 @@ def compare_scores(player_score, computer_score):
     compares scores to decide on the winner and
     increments the game wins values in the dictionary
     """
-    typingPrint(f"You scored: {player_score}\n")
+    typingPrint(f"\nYou scored: {player_score}\n")
     time.sleep(1)
     if player_score == 21:
         if computer_score > 21:
@@ -416,7 +416,7 @@ def play_again():
     elif new_game == "n":
         time.sleep(1)
         print("\n")
-        print(pyfiglet.figlet_format("\nThanks\nfor\nplaying\n"
+        print(pyfiglet.figlet_format("\nThanks for playing\n"
                                      "Brilliant Blackjack!!"))
         sys.exit()
     else:

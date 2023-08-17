@@ -72,6 +72,8 @@ After the user has selected to start the game, the game will begin to shuffle th
 
 [Game Play](documentation/brilliant-blackjack-game-play.png)
 
+Invalid input error
+
 
 
 ### Features Left to Implement
