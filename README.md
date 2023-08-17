@@ -46,23 +46,23 @@ Beneath the welcome message the game asks the user to enter a name, this can be 
 
 The enter name has validation to stop the user entering a blank name and entering "computer" as a name. An error message is displayed prompting the user to try again. 
 
-[Enter Name](documentation/error-message-no-name.png)
-[Enter Name](documentation/error-message-no-name.png)
+![Enter Name](documentation/error-message-no-name.png)
+![Enter Name](documentation/error-message-no-name.png)
 
 #### Game Rules
 
 Before starting the game, the user has the option to review the game rules or play without.
 
-[Game Rules](documentation/brilliant-blackjack-rules-input.png)
+![Game Rules](documentation/brilliant-blackjack-rules-input.png)
 
 The game rules options have validation to ensure the user only selects "Y" or "N". If the user enters anything other than that, the error message Sorry you can only select Y for (yes) or N for (no), please try again!" 
 
-[Game Rules](documentation/error-message-invalid-selection-rules.png)
-[Game Rules](documentation/error-message-no-selection-rules.png)
+![Game Rules](documentation/error-message-invalid-selection-rules.png)
+![Game Rules](documentation/error-message-no-selection-rules.png)
 
 When the user enters the correct input of "Y" a display of the rules is brought up for the user to read.
-[Game Rules](documentation/brilliant-blackjack-rules-heading.png)
-[Game Rules](documentation/brilliant-blackjack-rules.png)
+![Game Rules](documentation/brilliant-blackjack-rules-heading.png)
+![Game Rules](documentation/brilliant-blackjack-rules.png)
 
 If the user decides not to read the rules the game will begin.
 
@@ -70,18 +70,24 @@ If the user decides not to read the rules the game will begin.
 
 After the user has selected to start the game, the game will begin to shuffle the deck of cards, and deal out cards to the computer and user. The user will be informed of their cards and score and will be given the option to stick or twist. Again this has validation so the users can only select "S" or "T".
 
-[Game Play](documentation/brilliant-blackjack-game-play.png)
+![Game Play](documentation/brilliant-blackjack-game-play.png)
 
-Invalid input error
+Invalid input error.
 
+![Game Play](documentation/error-message-invalid-selection-stick-twist.png)
 
+If the user chooses to twist, they will be dealt another card and their score updated, providing the user doesn't bust, the option of stick or twist will be given again. If the user does bust, a message is displayed and a point awarded to the computer.
+
+![Game Play](documentation/brilliant-blackjack-game-play-bust.png)
+![Game Play](documentation/brilliant-blackjack-game-play-bust-scores.png)
+
+The user will then be asked if the want to play again, if the user selects "Y" the game will restart and total up the games won. If the user select "N" the game will end and display a thankyou for playing message. The inputs also have validation so the user can only choose either "Y" or "N".
+
+![Game Play](documentation/brilliant-blackjack-game-play-exit-message.png)
 
 ### Features Left to Implement
 
-* I would like to add a countdown timer for each question, this would create a more competetive quiz as users would need to think fast before selecting an answer.
-
-* I would also like to add a create account feature, so users can store their scores against theirr login details.
-
+* 
 ## Technologies Used
 
 * The website was created with [HTML](https://html.spec.whatwg.org/).
