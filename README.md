@@ -87,34 +87,39 @@ The user will then be asked if the want to play again, if the user selects "Y" t
 
 ### Features Left to Implement
 
-* 
+* Player against player feature.
+* Betting with chips whilst playing.
+
 ## Technologies Used
 
-* The website was created with [HTML](https://html.spec.whatwg.org/).
-* [CSS](https://www.w3.org/Style/CSS/Overview.en.html) was used to add styling to the website.
-* [JavaScript](https://en.wikipedia.org/wiki/JavaScript) was used to create the quiz functionality.
+* [Python](hhttps://www.python.org/) was used to create the game functionality.
 * [Codeanywhere](https://codeanywhere.com/) was used to create, edit and preview the codes.
 * [Git](https://git-scm.com/) was used for version control and tracked changes in the codes.
 * [GitHub](https://github.com/) was used to store the codes and deploy the website.
-* [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) were used extensively while adjusting the objects in the website for different screen sizes.
-* The website was fully validated using [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
-* [Am I responsive?](https://ui.dev/amiresponsive) was used to generate the mockup image showing the website on various screen sizes.
-* The fonts used in the website are imported from [Google Fonts](https://fonts.google.com/).
-* [Shutterstock](https://www.shutterstock.com/) was used to source royalty free images.
+* [PEP8CI](https://pep8ci.herokuapp.com/) was used to validate python code.
+
 
 ## Testing
 
 ### Code Validation
 
-The website was fully validated to ensure there were no syntax errors. The official [W3C HTML Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) were used for the validation and no errors were found. [JSHint](https://jshint.com/) was used to ensure no errors were found within the JavaScript. 15 warnings were detected but these relate to some syntaxes only being available in ES6. 
+The website was fully validated using the PEP8CI validator and returned no errors.
+
+![validation](documentation/python-linter-check.png)
 
 ### Resolved Bugs
 
-* 
+* Resolved a bug where the read the rules while true loop, was continously looping back after the game had ended. I fixed this by deleting the while True and just leaving the if else statements, i then split the game rules function into two functions. One for the displaying of the rules and the second for the input options for reading the rules. I then called these functions at the appropiate points i.e error messages so the options will be displayed again.
 
 ### Unresolved Bug
 
-* 
+* There are no unresolved bugs that I am aware of.
+
+#### Manual testing
+
+* All inputs were tested for all eventualities, the tests consisted of not putting a selection/name when prompted to, putting the wrong selection/name when prompted to and putting the correct selections. All inputs that were given wrong/no selections all successfully gave an error message that prompts the user what is required and to try again.
+
+* Both myself and my mentor have been testing the game and have found some minor grammatical errors, these have been fixed and the game runs as it should.
 
 ## Deployment
 
@@ -152,7 +157,7 @@ The version control was maintained using git within Visual Studio Code to push c
 
 ### Codes
 
-* The question layout and function ideas were inspired by the [stackoverflow.com](https://stackoverflow.com/questions/75996907/trying-to-implement-a-scoring-system-to-a-web-based-trivia-game) forum submission.
+* 
 
 
 ## Acknowledgements
